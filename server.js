@@ -15,13 +15,22 @@ const getBooks = (stream, headers) => {
   });
 
   if (title !== null) {
-    const index = books.findIndex((book) => book.title === title);
+    // I have console logged here to check if the title is not as expected or if somewhere in the iteration,
+    // something's going wrong or so but everything looks fine.
+    // Yet, the book variable doesn't contain anything after the below line
+    const book = books.find((book) => book.title === title);
 
-    if (index > -1) {
-      stream.end(books.find((book) => title === book.title));
+    if (book !== null) {
+      stream.end(book);
     } else {
       stream.end("Book with the requested title isn't found!");
     }
+
+    // if (index > -1) {
+    //   stream.end(books.find((book) => title === book.title));
+    // } else {
+    //   stream.end("Book with the requested title isn't found!");
+    // }
   } else {
     stream.end(books);
   }

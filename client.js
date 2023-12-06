@@ -9,19 +9,19 @@ const session = http2.connect("http://localhost:8000");
 
 // ********** POST book(s) to the server **********
 
-const postReq = session.request({ ":path": "/", ":method": "POST" });
-postReq.write(
-  JSON.stringify([
-    { title: "Frankenstein", author: "Mary Shelley" },
-    { title: "Demo", author: "Afrid" },
-  ]),
-  "utf8"
-);
-postReq.end();
+// const postReq = session.request({ ":path": "/", ":method": "POST" });
+// postReq.write(
+//   JSON.stringify([
+//     { title: "Frankenstein", author: "Mary Shelley" },
+//     { title: "Demo", author: "Afrid" },
+//   ]),
+//   "utf8"
+// );
+// postReq.end();
 
-postReq.on("response", (headers) => console.log(headers));
-postReq.setEncoding("utf8");
-postReq.on("data", (data) => console.log(data));
+// postReq.on("response", (headers) => console.log(headers));
+// postReq.setEncoding("utf8");
+// postReq.on("data", (data) => console.log(data));
 
 // ********** GET book(s) based on the title **********
 
