@@ -28,7 +28,7 @@ postReq.on("data", (data) => console.log(data));
 // To be used only after the POST is done, so it would be commented for the time being since
 // the process is executed from the terminal
 
-// Will be uncommented after the POST operation
+// Will be uncommented after the POST operation while the server still runs
 
 // const title = "Demo";
 
